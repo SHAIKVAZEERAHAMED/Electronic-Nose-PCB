@@ -50,3 +50,12 @@ This folder will contain:
 - Drill Files
 - Manufacturing Outputs
 - Assembly Drawings
+
+## Directory Structure
+
+```text
+PCB/
+├── Layout/
+├── Gerbers/
+├── Manufacturing/
+```
