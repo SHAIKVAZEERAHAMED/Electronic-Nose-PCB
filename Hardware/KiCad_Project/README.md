@@ -17,8 +17,6 @@ The Electronic Nose PCB was designed using **KiCad 9.0.7**. This folder includes
 | *.kicad_pro | KiCad project file |
 | *.kicad_sch | Complete schematic |
 | *.kicad_pcb | PCB layout |
-| fp-lib-table | Footprint library configuration |
-| sym-lib-table | Symbol library configuration |
 
 ## Design Features
 
