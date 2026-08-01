@@ -124,7 +124,6 @@ Electronic-Nose-PCB
 │
 ├── Documentation
 ├── Datasheets
-├── Images
 └── README.md
 ```
 ---
