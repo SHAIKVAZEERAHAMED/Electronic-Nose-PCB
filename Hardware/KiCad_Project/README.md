@@ -43,6 +43,3 @@ This folder will contain:
 - KiCad project
 - Schematics
 - PCB layout
-- Custom symbols
-- Custom footprints
-- Manufacturing outputs
