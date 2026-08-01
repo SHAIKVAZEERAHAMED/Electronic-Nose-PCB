@@ -100,7 +100,6 @@ Electronic-Nose-PCB
 │   └── KiCad_Project
 │
 ├── Documentation
-├── Paper
 ├── Datasheets
 ├── Images
 └── README.md
