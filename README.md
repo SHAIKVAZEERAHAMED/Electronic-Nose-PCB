@@ -27,19 +27,45 @@ The project focuses on hardware architecture, PCB implementation, and modular su
 ---
 
 ## System Architecture
-MEMS Gas Sensors
-│
-▼
-Analog Front End
-│
-▼
-ESP32-S3 ───────── UART ───────── RP2040
-│ │
-│ ▼
-│ Heater Driver
-│
-▼
-Power Management
+
+```text
+                    +----------------------+
+                    |   MEMS Gas Sensors   |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |  Analog Front End    |
+                    +----------+-----------+
+                               ^
+                               |
+                              SPI
+                               |
+                               v
+                    +----------------------+
+                    |   ESP32-S3 (Master)  |
+                    +----+--+---------+----+
+                         |  ^         |
+                         |  |         |
+                      UART SPI       I²C/ADC
+                         |  |         |
+                         v  v         v
+                  +--------------+  BME680
+                  |    RP2040    |
+                  +------+-------+
+                         |
+                         v
+                +------------------+
+                |  Heater Driver   |
+                +--------+---------+
+                         |
+                         v
+                +------------------+
+                |  MEMS Heaters    |
+                +------------------+
+
+          Power Management supplies all modules
+```
 
 
 ---
@@ -60,23 +86,25 @@ Power Management
 ---
 
 ## Repository Structure
-Hardware/
-├── Sensors/
-├── Analog_Front_End/
-├── ESP32-S3/
-├── RP2040/
-├── Power_Management/
-├── PCB/
-└── KiCad_Project/
 
-Documentation/
-
-Paper/
-
-Datasheets/
-
-Images/
-
+```text
+Electronic-Nose-PCB
+│
+├── Hardware
+│   ├── Sensors
+│   ├── Analog_Front_End
+│   ├── ESP32-S3
+│   ├── RP2040
+│   ├── Power_Management
+│   ├── PCB
+│   └── KiCad_Project
+│
+├── Documentation
+├── Paper
+├── Datasheets
+├── Images
+└── README.md
+```
 ---
 
 ## Hardware
