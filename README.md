@@ -71,6 +71,27 @@ The project focuses on hardware architecture, PCB implementation, and modular su
   <img src="Images/System_Block_Diagram.png" width="900">
 </p>
 ---
+---
+
+## PCB Layout
+
+### Top View
+
+<p align="center">
+  <img src="Hardware/PCB/Layout/PCB_Top.png" width="700">
+</p>
+
+### 3D View
+
+<p align="center">
+  <img src="Hardware/PCB/Layout/PCB_3D_Front.png" width="700">
+</p>
+
+<p align="center">
+  <img src="Hardware/PCB/Layout/PCB_3D_Angle.png" width="700">
+</p>
+
+---
 
 ## Hardware Specifications
 
