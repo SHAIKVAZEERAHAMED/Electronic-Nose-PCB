@@ -25,8 +25,8 @@ The Electronic Nose PCB was designed using **KiCad 9.0.7**. This folder includes
 - Dual microcontroller architecture
 - Analog front-end circuitry
 - Power management subsystem
-- Two-layer PCB layout
-- Design Rule Check (DRC) verified
+- Single-layer PCB layout
+- Design Rule Check (DRC) in progress
 - Electrical Rule Check (ERC) verified
 
 ## How to Open
