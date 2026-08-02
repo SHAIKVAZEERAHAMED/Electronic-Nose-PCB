@@ -1,17 +1,18 @@
 # Analog Front End
 
-This directory contains the analog signal acquisition circuit used to interface the MEMS gas sensors with the ESP32-S3 analog-to-digital converter (ADC).
+This directory contains the analog front-end circuitry used to interface the MEMS gas sensors with the data acquisition system of the Electronic Nose.
 
 ## Overview
 
-Each MEMS gas sensor produces an analog voltage proportional to the detected gas concentration. Before acquisition by the ESP32-S3, the sensor output passes through an analog front-end designed to improve signal quality and provide configurable amplification.
+Each MEMS gas sensor produces an analog voltage proportional to the detected gas concentration. Before digitization, the sensor output passes through an analog front-end designed to improve signal quality, provide configurable amplification, and ensure accurate analog-to-digital conversion.
 
 The analog front-end consists of:
 
 - RC low-pass filter
 - TLV9152 rail-to-rail operational amplifier
 - Configurable gain selection using solder jumpers
-- ADC interface to the ESP32-S3
+- ADS131M08 multi-channel Analog-to-Digital Converter (ADC)
+- SPI interface to the ESP32-S3
 
 ## Low-Pass Filter
 
@@ -19,32 +20,47 @@ A first-order RC low-pass filter with a cutoff frequency of approximately **7 kH
 
 ## Operational Amplifier
 
-The TLV9152 operational amplifier is configured to support two operating modes:
+The TLV9152 operational amplifier supports two operating modes:
 
-- **Voltage Follower**
-  - Unity gain
-  - High input impedance
-  - Low output impedance
+### Voltage Follower
 
-- **Non-Inverting Amplifier**
-  - Gain selectable through solder jumpers
-  - Used for low-level sensor signals
+- Unity gain
+- High input impedance
+- Low output impedance
 
-The low output impedance of the amplifier also minimizes signal degradation caused by long PCB traces between the sensor array and the ADC.
+### Non-Inverting Amplifier
 
-## Interface
+- Gain selectable using solder jumpers
+- Suitable for low-level sensor signals
 
-Signal Flow:
+The low output impedance of the amplifier minimizes signal degradation caused by long PCB traces and provides a stable input to the ADC.
 
-MEMS Sensor
-↓
-RC Low-Pass Filter
-↓
+## Analog-to-Digital Conversion
+
+The conditioned analog outputs from the gas sensors are sampled using the **ADS131M08**, an eight-channel, high-resolution analog-to-digital converter. The external ADC provides improved measurement accuracy and lower noise compared with the ESP32-S3 internal ADC. Digitized sensor data are transferred to the ESP32-S3 through the SPI interface for further processing.
+
+## Signal Flow
+
+```text
+MEMS Gas Sensor
+        │
+        ▼
+RC Low-Pass Filter (7 kHz)
+        │
+        ▼
 TLV9152 Operational Amplifier
-↓
+        │
+        ▼
 Gain Selection Jumpers
-↓
-ESP32-S3 ADC
+        │
+        ▼
+ADS131M08 ADC
+        │
+      SPI Bus
+        │
+        ▼
+ESP32-S3
+```
 
 ## Components
 
@@ -53,14 +69,16 @@ ESP32-S3 ADC
 | TLV9152 | Rail-to-rail operational amplifier |
 | RC Network | 7 kHz low-pass filter |
 | Solder Jumpers | Gain configuration |
-| ESP32-S3 ADC | Analog signal acquisition |
+| ADS131M08 | 24-bit multi-channel ADC |
+| SPI Interface | Communication between ADC and ESP32-S3 |
 
 ## Folder Contents
 
-This folder will contain:
+This folder contains:
 
-- Analog front-end schematic
+- Analog front-end schematics
+- ADC interface circuit
 - RC filter calculations
 - Gain calculations
 - PCB layout images
-- Circuit simulation (if available)
+- Design notes
