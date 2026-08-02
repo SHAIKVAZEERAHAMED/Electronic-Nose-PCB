@@ -35,7 +35,7 @@ Each MEMS gas sensor incorporates an integrated micro-heater that requires contr
 
 ## Design Rationale
 
-The RP2040 was selected because it provides multiple hardware PWM channels with accurate timing, making it well suited for controlling the MEMS sensor heaters. Since the RP2040 GPIOs cannot directly drive the heater load, the PWM outputs are interfaced with the **TBD62083AFNG DMOS driver**, which provides the required current-driving capability for the heater circuits. Separating heater control from the primary processing tasks improves overall system performance and allows the ESP32-S3 to focus on sensor acquisition, communication, and system management.
+The RP2040 was selected because it provides multiple hardware PWM channels with accurate timing, making it well suited for controlling the MEMS sensor heaters. Since the RP2040 GPIOs cannot directly drive the heater load, the PWM outputs (10 KHz frequency) are interfaced with the **TBD62083AFNG DMOS driver**, which provides the required current-driving capability for the heater circuits. Separating heater control from the primary processing tasks improves overall system performance and allows the ESP32-S3 to focus on sensor acquisition, communication, and system management.
 
 ## Signal Flow
 
@@ -74,5 +74,4 @@ This folder contains:
 - UART interface
 - PWM generation circuit
 - DMOS driver interface
-- PCB layout
-- Design notes
+
