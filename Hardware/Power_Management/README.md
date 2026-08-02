@@ -32,7 +32,7 @@ The system operates from a rechargeable lithium-ion battery. Dedicated power man
 | Fuel Gauge IC | Battery monitoring |
 | Buck Converter | 2.5 V supply |
 | Buck Converter | 1.8 V supply |
-| LDO / Regulator | 3.3 V supply |
+| Buck Boost Converter | 3.3 V supply |
 
 ## Design Considerations
 
@@ -50,5 +50,3 @@ This folder will contain:
 - Battery charger circuit
 - Fuel gauge circuit
 - Buck converter circuits
-- Power tree diagram
-- PCB layout images
