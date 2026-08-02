@@ -37,7 +37,7 @@ The low output impedance of the amplifier minimizes signal degradation caused by
 
 ## Analog-to-Digital Conversion
 
-The conditioned analog outputs from the gas sensors are sampled using the **ADS131M08**, an eight-channel, high-resolution analog-to-digital converter. The external ADC provides improved measurement accuracy and lower noise compared with the ESP32-S3 internal ADC. Digitized sensor data are passed through DMOS TBD62083AFNG_EL and  transferred to the ESP32-S3 through the SPI interface for further processing.
+The conditioned analog outputs from the gas sensors are sampled using the **ADS131M08**, an eight-channel, high-resolution analog-to-digital converter. The external ADC provides improved measurement accuracy and lower noise compared with the ESP32-S3 internal ADC. Digitized sensor data are transferred to the ESP32-S3 through the SPI interface for further processing.
 
 ## Signal Flow
 
