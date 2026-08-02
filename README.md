@@ -68,7 +68,7 @@ The project focuses on hardware architecture, PCB implementation, and modular su
 ```
 
 <p align="center">
-  <img src="Images/System_Block_Diagram.png" width="900">
+  <img src="System_Block_Diagram.png" width="900">
 </p>
 ---
 ---
