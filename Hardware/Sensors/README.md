@@ -6,26 +6,29 @@ This directory contains the MEMS gas sensor array used in the Electronic Nose sy
 
 The Electronic Nose employs a fourteen-channel MEMS-based gas sensor array to detect a broad range of volatile organic compounds (VOCs) and hazardous gases. The sensors were selected to provide diverse sensing characteristics, enabling improved gas discrimination through pattern recognition techniques.
 
-## Sensor Array
 
-The following MEMS gas sensors are used in the design:
+## Sensor Inventory and Rail Assignments
 
-| Sensor | Target Gas | Heater Voltage |
-|---------|------------|---------------|
-| SMD1001 | VOC | 1.8 V |
-| SMD1002 | Carbon Monoxide (CO) | 1.8 V |
-| SMD1007 | Alcohol | 1.8 V |
-| SMD1008 | Combustible Gases (CH₄) | 1.8 V |
-| SMD1011 | Propane | 1.8 V |
-| SMD1013B | TVOC | 2.5 V |
-| SMD1015 | Acetone | 2.5 V |
-| GM-102B | Carbon Monoxide (CO) | 2.5 V |
-| GM-202B | Smoke | 2.5 V |
-| GM-302B | VOC / Alcohol | 2.5 V |
-| GM-402B | VOC / Combustible Gases | 2.5 V |
-| GM-502B | VOC | 2.5 V |
-| GM-512B | Breath Odor | 2.5 V |
-| GM-602B | Hydrogen Sulfide (H₂S) | 2.5 V |
+All 14 sensors, their heater voltages, maximum heater power, and assigned rails are listed below.
+
+| Sensor | Manufacturer | Target gas | V_H | P_H (max) | Rail |
+|--------|-------------|-----------|-----|-----------|------|
+| GM-102B | Winsen | NO₂ | 1.8 V ±0.1 V | ≤ 40 mW | 1.8 V |
+| SMD1001 | IDM/Huiwen | Formaldehyde | 1.8 V ±0.05 V | ≤ 36 mW | 1.8 V |
+| SMD1002 | IDM/Huiwen | Ammonia (NH₃) | 1.8 V ±0.05 V | ≤ 36 mW | 1.8 V |
+| SMD1007 | IDM/Huiwen | Hydrogen sulfide (H₂S) | 1.8 V ±0.05 V | ≤ 36 mW | 1.8 V |
+| SMD1008 | IDM/Huiwen | Methane (CH₄) | 1.8 V ±0.05 V | ≤ 30 mW | 1.8 V |
+| SMD1011 | IDM/Huiwen | Propane (C₃H₈) | 1.8 V ±0.05 V | ≤ 30 mW | 1.8 V |
+| SMD1013B | IDM/Huiwen | TVOC | 1.8 V ±0.1 V | ≤ 43 mW | 1.8 V |
+| SMD1015 | IDM/Huiwen | Acetone | 1.8 V ±0.1 V | ≤ 30 mW | 1.8 V |
+| GM-602B | Winsen | H₂S & benzene | 1.9 V ±0.1 V | ≤ 40 mW | 1.8 V† |
+| GM-202B | Winsen | Smoke/alcohol | 2.5 V ±0.1 V | ≤ 50 mW | 2.5 V |
+| GM-302B | Winsen | Ethanol | 2.5 V ±0.1 V | ≤ 50 mW | 2.5 V |
+| GM-502B | Winsen | VOC | 2.5 V ±0.1 V | ≤ 50 mW | 2.5 V |
+| GM-512B | Winsen | H₂S/alcohol/acetone | 2.5 V ±0.1 V | ≤ 50 mW | 2.5 V |
+| GMV-2021B | Winsen | Hydrogen (H₂) | 2.5 V ±0.1 V | ≤ 50 mW | 2.5 V |
+
+**†** The GM-602B is rated 1.9 V ±0.1 V, giving an operating range of 1.8 V to 2.0 V. Running it at 1.8 V places it at the lower bound of its specified tolerance. Heater power will be slightly less than at the 1.9 V nominal (by a factor of (1.8/1.9)² ≈ 90%), which is conservative and within the ≤ 40 mW limit. Sensitivity curves in the GM-602B datasheet are characterised at 1.9 V; response function will be marginally different at 1.8 V but the sensor is not damaged or out-of-spec. This grouping avoids the need for a dedicated third rail.
 
 ## Features
 
