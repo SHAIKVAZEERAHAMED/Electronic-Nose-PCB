@@ -159,7 +159,7 @@ Current progress:
 
 - ✅ System Architecture
 - ✅ Schematic Design
-- ✅ PCB Layout
+- ⏳ PCB Layout
 - ⏳ PCB Fabrication
 - ⏳ Hardware Testing
 - ⏳ Firmware Development
