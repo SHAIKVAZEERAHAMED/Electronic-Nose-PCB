@@ -15,7 +15,7 @@ The project focuses on hardware architecture, PCB implementation, and modular su
 ## Key Features
 
 - 14-channel MEMS gas sensor array
-- ESP32-S3 main controller
+- ESP32-S3 WROOM 1 N16 main controller
 - RP2040 dedicated PWM co-processor
 - Configurable analog front-end
 - Battery-powered operation
@@ -98,7 +98,7 @@ The project focuses on hardware architecture, PCB implementation, and modular su
 | Component | Description |
 |-----------|-------------|
 | Gas Sensors | 14 MEMS Gas Sensors |
-| Main Controller | ESP32-S3 |
+| Main Controller | ESP32-S3 WROOM 1 N16 |
 | PWM Controller | RP2040 |
 | Heater Driver | TBD62083AFNG |
 | Environmental Sensor | BME680 |
