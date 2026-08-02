@@ -21,7 +21,7 @@ Each MEMS gas sensor incorporates an integrated micro-heater that requires contr
 
 | Interface | Connected Device |
 |-----------|------------------|
-| UART | ESP32-S3 |
+| UART & SPI | ESP32-S3 |
 | GPIO | TBD62083AFNG DMOS Driver |
 | PWM | MEMS Sensor Heaters (via DMOS Driver) |
 
