@@ -9,7 +9,7 @@ The ESP32-S3 serves as the primary processing unit of the Electronic Nose system
 ## Main Responsibilities
 
 - Acquisition of analog signals from the MEMS gas sensors
-- Communication with the RP2040 through UART
+- Communication with the RP2040 through UART and SPI
 - Communication with the BME680 environmental sensor through I²C
 - Battery monitoring
 - System control and coordination
@@ -21,6 +21,7 @@ The ESP32-S3 serves as the primary processing unit of the Electronic Nose system
 |-----------|------------------|
 | ADC | Analog Front End |
 | UART | RP2040 |
+| SPI | RP2040 |
 | I²C | BME680 |
 | GPIO | System peripherals |
 
@@ -37,7 +38,4 @@ The ESP32-S3 serves as the primary processing unit of the Electronic Nose system
 This folder will contain:
 
 - ESP32-S3 schematic
-- Pin assignment
 - Circuit diagrams
-- PCB layout images
-- Datasheet references
